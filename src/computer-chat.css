@@ -1,0 +1,19 @@
+.desktop-request{flex:none;min-width:0;margin:0 12px 8px;padding:8px 10px;border:1px solid #b8ceca;border-radius:10px;background:#f2f8f5;color:#254d45;font-size:12px}
+.desktop-request-head,.desktop-request-actions{display:flex;align-items:center;gap:7px}
+.desktop-request-head{justify-content:space-between}
+.desktop-request-copy{max-height:72px;overflow:auto;overflow-wrap:anywhere;scrollbar-width:thin;line-height:1.45}
+.desktop-request-copy p,.desktop-request-copy ol{margin:3px 0}
+.desktop-request-copy ol{padding-left:20px}
+.desktop-request-copy [data-prompt]{color:#5a6f67}
+.desktop-request-actions{margin-top:5px}
+.desktop-request-actions[hidden]{display:none}
+.desktop-request button{padding:3px 8px;border-radius:6px;border:1px solid #b8ceca;background:#fff;color:#254d45;font-size:11px;cursor:pointer}
+.desktop-request [data-confirm]{background:#275e54;border-color:#275e54;color:#fff}
+.desktop-request button:disabled{opacity:.5;cursor:default}
+.card .desktop-request{margin:0 9px 4px;padding:4px 7px;font-size:11px}
+.card .desktop-request-copy{max-height:51px}
+.card .desktop-request-actions{margin-top:3px}
+.card .desktop-request button{min-height:20px;font-size:10px}
+.card:has(.desktop-request:not([hidden])){overflow-y:auto;scrollbar-width:thin}
+.card:has(.desktop-request:not([hidden])) #messages{min-height:0}
+.card:has(.desktop-request:not([hidden])) #input{height:35px}

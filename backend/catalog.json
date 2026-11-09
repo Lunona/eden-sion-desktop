@@ -1,0 +1,102 @@
+{
+  "faces": {
+    "neutral": "默认",
+    "soft_smile": "微笑",
+    "closed_smile": "闭眼笑",
+    "wink_left": "左眨眼",
+    "wink_right": "右眨眼",
+    "worried": "担忧",
+    "serious": "严肃",
+    "happy": "开心笑",
+    "shy": "害羞",
+    "surprised": "惊讶",
+    "curious": "疑惑",
+    "sleepy": "困倦",
+    "downcast": "失落",
+    "annoyed": "轻微不满",
+    "laugh": "开怀笑",
+    "angry": "生气",
+    "pout": "嘟嘴",
+    "bashful": "羞怯低眼",
+    "expectant": "期待",
+    "thinking": "思考",
+    "skeptical": "怀疑",
+    "embarrassed": "尴尬",
+    "yawning": "打哈欠",
+    "resting": "放松闭眼"
+  },
+  "actions": [
+    [
+      "GazeFollow92",
+      "01 注视跟随"
+    ],
+    [
+      "NoticeApproach92",
+      "02 靠近注意"
+    ],
+    [
+      "LookAfter92",
+      "03 目送后回正"
+    ],
+    [
+      "StrokeHead92",
+      "04 轻摸头"
+    ],
+    [
+      "PatHead92",
+      "05 轻拍头"
+    ],
+    [
+      "HoldHead92",
+      "06 头顶按住与松开"
+    ],
+    [
+      "TapCheek92",
+      "07 轻点脸颊"
+    ],
+    [
+      "ShyHover92",
+      "08 脸旁停留与害羞"
+    ],
+    [
+      "TapShoulder92",
+      "09 轻点肩部"
+    ],
+    [
+      "TapCloth92",
+      "10 前襟轻点回弹"
+    ],
+    [
+      "TouchHand92",
+      "11 碰手与手腕回应"
+    ],
+    [
+      "PullSleeve92",
+      "12 袖口轻拉与释放"
+    ],
+    [
+      "StrokeHair92",
+      "13 左侧长发轻拨"
+    ],
+    [
+      "ReleaseHair92",
+      "14 右侧发梢保持与释放"
+    ],
+    [
+      "DragSide92",
+      "15 左右拖动与重心"
+    ],
+    [
+      "DragVertical92",
+      "16 上下拖动"
+    ],
+    [
+      "FootResponse92",
+      "17 脚边反应与抬脚"
+    ],
+    [
+      "WaveHello92",
+      "18 抬臂摆手回应"
+    ]
+  ]
+}

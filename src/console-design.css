@@ -1,0 +1,31 @@
+/* Layout helpers for the console pages. Visual styling lives in theme.css. */
+.console-design main>header{margin:0 0 18px}
+.console-summary,.console-tabs{display:none}
+.console-design .companion-grid{grid-template-columns:minmax(0,1fr) 260px;gap:16px}
+.console-design .companion-metrics{display:none}
+.console-design .provider-layout{grid-template-columns:minmax(0,1fr) 270px;gap:16px}
+.console-design .provider-route{padding:14px 0}
+.admin-section-title{margin-bottom:18px}
+.admin-section-title h2{display:none}
+.admin-section-title p{margin:0}
+.persona-workspace{display:grid;grid-template-columns:240px minmax(0,1fr);gap:16px;align-items:start}
+.persona-directory{position:static;width:auto;padding:20px}
+.persona-directory h3{display:flex;align-items:center;justify-content:space-between}
+.persona-directory h3 span{display:none}
+.persona-selected{display:flex;align-items:center;gap:12px;padding:12px}
+.persona-selected img{width:52px;height:68px;object-fit:cover;object-position:top;border-radius:10px}
+.persona-selected strong{font-size:16px}
+.persona-selected p{font-size:11px;margin:3px 0 7px}
+.persona-directory>p{font-size:12px;line-height:1.85;margin:18px 0}
+.persona-directory>button{width:100%}
+.persona-import{display:block;margin:14px 0 0;font-size:12px}
+.persona-import input{display:block;width:100%;font-size:11px;margin-top:8px}
+.persona-editor textarea{width:100%;display:block;padding:11px 12px;margin:8px 0 14px;line-height:1.8;resize:vertical;font:inherit;font-size:12.5px}
+.persona-editor .profile-fields{margin:0;grid-template-columns:1fr 1fr}
+.persona-badges{display:flex;gap:7px;flex-wrap:wrap;margin:4px 0 18px}
+.persona-badges span{font-size:11px;padding:5px 10px;border-radius:999px}
+.persona-editor pre{white-space:pre-wrap;line-height:1.8;padding:14px;font:inherit;font-size:12px;border-radius:12px}
+.persona-editor .profile-actions{align-items:center;margin-top:14px}
+.persona-editor .profile-actions span{font-size:12px}
+@media(max-width:1030px){.console-design .companion-grid,.console-design .provider-layout{grid-template-columns:1fr}.console-design .companion-side{display:grid;grid-template-columns:1fr 1fr;gap:14px}.persona-workspace{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:850px){.console-design .companion-side{grid-template-columns:1fr}}

@@ -1,0 +1,3 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const {acquireInstance}=require('../src/single-instance.cjs');
+test('one production identity owns the app across different data directories and subsequent starts only activate it',async()=>{let activations=0;const id='isolated-test-'+crypto.randomUUID(),first=await acquireInstance(id,()=>activations++);try{assert.ok(first.primary);const second=await acquireInstance(id.toUpperCase(),()=>{throw Error('not owner');});assert.equal(second.primary,false);assert.equal(second.address,first.address);assert.equal(activations,1);}finally{first.close();}});
