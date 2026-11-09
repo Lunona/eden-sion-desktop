@@ -18,7 +18,7 @@ npm ci
 npm test
 ```
 
-准备你有权使用的资源，再执行 `npm start`：
+从 [v0.9.13 发布页](https://github.com/Lunona/eden-sion-desktop/releases/tag/v0.9.13) 下载 `Sion-Live2D-v105-v0.9.13.zip`，把其中的 `assets` 文件夹解压到仓库根目录。准备下表中的 Cubism Core，再执行 `npm start`：
 
 | 本地路径 | 用途 |
 | --- | --- |
@@ -33,6 +33,6 @@ npm test
 
 ## 公开范围与致谢
 
-仓库包含应用和记忆功能的源代码。模型密钥、聊天和记忆数据、个人配置、Live2D SDK、角色美术与语音资产均存放在仓库之外。源码包需要上述本地资源才能完整运行桌宠。
+仓库包含应用和记忆功能的源代码，v105 运行时模型在发布页单独下载。API 密钥、聊天和记忆数据、个人配置、Live2D SDK 及语音资产请保存在本地。模型包附有独立的同人资产声明。
 
 源码按 [GNU AGPL-3.0](LICENSE) 发布。感谢 **lxfight** 和 LivingMemory 的贡献者提供知识图谱实现，也感谢 **menglimi** 的《我会永远陪着你》为陪伴机制提供设计参考。改编范围、上游链接和权利说明见 [第三方声明](THIRD_PARTY_NOTICES.md)。

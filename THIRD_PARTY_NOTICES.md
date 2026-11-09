@@ -19,3 +19,5 @@
 - **Windows-MCP**　电脑助手可选调用 Windows-MCP，保留 [JEOMON GEORGE 的 MIT 许可声明](licenses/Windows-MCP-0.8.5-LICENSE.md)。
 - **Live2D Cubism Core**　需按 [Live2D 的许可条款](licenses/Live2D-Core.md) 从官方获取并自行配置。
 - **《eden*》及诗音**　原作名称、角色及相关素材的权利归原权利人。本项目为非官方同人，仓库的源码许可证不授予角色美术、游戏文本、语音或 Live2D 资产的使用权。
+
+[发布页的 v105 运行时模型](https://github.com/Lunona/eden-sion-desktop/releases/tag/v0.9.13) 作为独立资产提供，包内附有 MODEL_ASSET_NOTICE.txt。
