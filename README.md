@@ -23,7 +23,13 @@ npm test
 | 本地路径 | 用途 |
 | --- | --- |
 | `assets/live2d/sion/Sion_H20R12.model3.json` | 与现有参数及动作目录匹配的 Live2D 模型入口，以及它引用的贴图、动作和物理资源 |
-| `src/vendor/live2dcubismcore.min.js` | 从 Live2D 官方 SDK 获取的 Cubism Core for Web |
+| `src/vendor/live2dcubismcore.min.js` | 将 [Live2D 官方 Cubism 5.3 Web Core（6.0.1）](https://cubism.live2d.com/sdk-web/core/06/live2dcubismcore.min.js) 另存到这个位置，文件后缀应为 `.js`。 |
+
+### 模型格式无法载入
+
+v105 模型使用 MOC3 格式版本 6，已使用官网当前的 Web Core 6.0.1 验证。旧的 Cubism 5.2 Web Core 只支持到 MOC3 格式版本 5，会出现这个报错。可用上表链接覆盖仓库内的 Core 文件，再重启桌宠。
+
+如果仍然报错，检查 `Sion_H20R12.model3.json` 和 `Sion_H20R12.moc3` 是否同在 `assets/live2d/sion/` 下。启动时的开发者控制台会记录 Core 版本。 [Live2D 官方 Web SDK 下载页](https://www.live2d.com/en/sdk/download/web/)
 
 源码启动时默认在仓库的 `data/` 新建本地资料。可在界面添加自己的模型连接，或在启动前用 `SION_PYTHON` 指向其他 Python 环境。电脑操作及本地语音识别需要另行配置。若使用 Whisper，本地环境需安装 `faster-whisper`，可在界面设置 Python 和模型路径。
 

@@ -2,10 +2,24 @@
 class SionLive2D {
   constructor(canvas){this.canvas=canvas;this.frames=0;this.camera=[1882,3344,6688*1.04*canvas.width/canvas.height,6688*1.04];}
   async load(manifest){
-    const data=await (await fetch(manifest)).json(),base=new URL('.',manifest);this.base=base;
-    const bytes=await (await fetch(new URL(data.FileReferences.Moc,base))).arrayBuffer();
-    this.moc=Live2DCubismCore.Moc.fromArrayBuffer(bytes);if(!this.moc)throw new Error('模型格式无法载入');
-    this.model=Live2DCubismCore.Model.fromMoc(this.moc);if(!this.model)throw new Error('模型初始化失败');
+    const core=globalThis.Live2DCubismCore;
+    if(!core?.Moc)throw new Error('未加载 Cubism Core for Web，请按 README 配置 src/vendor/live2dcubismcore.min.js');
+    const manifestResponse=await fetch(manifest);
+    if(!manifestResponse.ok)throw new Error('找不到模型入口，请将发布包中的 assets 解压到仓库根目录');
+    const data=await manifestResponse.json(),base=new URL('.',manifest);this.base=base;
+    const mocResponse=await fetch(new URL(data.FileReferences.Moc,base));
+    if(!mocResponse.ok)throw new Error('找不到 MOC3 模型文件，请重新解压发布包');
+    const bytes=await mocResponse.arrayBuffer();
+    const header=new Uint8Array(bytes,0,Math.min(5,bytes.byteLength));
+    if(header.length!==5||String.fromCharCode(...header.subarray(0,4))!=='MOC3'){
+      throw new Error('模型文件内容无效，请重新下载并解压发布包');
+    }
+    const supportedVersion=core.Version.csmGetLatestMocVersion();
+    if(header[4]>supportedVersion){
+      throw new Error('Cubism Core 版本过旧（支持 MOC3 '+supportedVersion+'，模型需要 '+header[4]+'），请按 README 更新 Web Core');
+    }
+    this.moc=core.Moc.fromArrayBuffer(bytes);if(!this.moc)throw new Error('模型格式无法载入，请核对 Web Core 版本和模型包完整性');
+    this.model=core.Model.fromMoc(this.moc);if(!this.model)throw new Error('模型初始化失败');
     this.model.update();this.d=this.model.drawables;this.c=this.model.canvasinfo;
     if(this.model.offscreens.count)throw new Error('此模型含当前显示器不支持的离屏效果');
     this.roles=await (await fetch(new URL('网格触碰分类.json',base))).json();
